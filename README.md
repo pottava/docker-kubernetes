@@ -18,12 +18,11 @@ https://hub.docker.com/r/pottava/kops/tags/
 
 ### Usage
 
-You can read help document:  
-`docker run --rm pottava/kops`
-
-Or you can alias common prefix:
-
 ```
-alias kops="docker run --rm pottava/kops"
-kops create cluster $CLUSTER_NAME --yes
+docker run --rm pottava/kops version
+docker run --rm -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e KOPS_STATE_STORE \
+    -v `pwd`/out:/out -v `pwd`/id_rsa.pub:/tmp/id_rsa.pub \
+    pottava/kops create cluster --target=terraform --ssh-public-key=/tmp/id_rsa.pub $CLUSTER_NAME
+docker run --rm -it -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e KOPS_STATE_STORE \
+    pottava/kops edit cluster $CLUSTER_NAME
 ```
