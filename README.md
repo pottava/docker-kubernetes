@@ -1,6 +1,29 @@
 kubernetes-related tools
 ---
 
+## kubectl
+
+### Images
+
+https://hub.docker.com/r/pottava/kubectl/
+
+### Available Tags
+
+https://hub.docker.com/r/pottava/kubectl/tags/
+
+### Supported tags and respective `Dockerfile` links
+
+・latest ([kubectl/versions/1.5/Dockerfile](https://github.com/pottava/docker-kubernetes/blob/master/kubectl/versions/1.5/Dockerfile))  
+・1.5 ([kubectl/versions/1.5/Dockerfile](https://github.com/pottava/docker-kubernetes/blob/master/kubectl/versions/1.5/Dockerfile))  
+
+### Usage
+
+```
+alias kops="docker run --rm -it -v $HOME/.kube/config:/root/.kube/config pottava/kubectl"
+kubectl version
+kubectl get pods
+```
+
 ## kops
 
 ### Images
