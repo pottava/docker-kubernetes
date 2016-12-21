@@ -1,7 +1,7 @@
 # kops v1.4
 # docker run --rm pottava/kops version
 # docker run --rm -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e KOPS_STATE_STORE \
-#        -v `pwd`/out:/out -v `pwd`/id_rsa.pub:/tmp/id_rsa.pub \
+#        -v `pwd`/id_rsa.pub:/tmp/id_rsa.pub -v `pwd`/out/:/out/ -v $HOME/.kube/:/root/.kube/ \
 #        pottava/kops create cluster --target=terraform --ssh-public-key=/tmp/id_rsa.pub $CLUSTER_NAME
 # docker run --rm -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e KOPS_STATE_STORE pottava/kops edit cluster $CLUSTER_NAME
 

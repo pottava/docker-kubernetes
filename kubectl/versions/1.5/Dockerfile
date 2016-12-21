@@ -1,6 +1,6 @@
 # kubectl v1.5
 # docker run --rm pottava/kubectl version
-# docker run --rm -it -v $HOME/.kube/config:/root/.kube/config pottava/kubectl get pods
+# docker run --rm -it -v $HOME/.kube/:/root/.kube/ pottava/kubectl get pods
 
 FROM alpine:3.4
 

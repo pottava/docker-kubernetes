@@ -19,7 +19,7 @@ https://hub.docker.com/r/pottava/kubectl/tags/
 ### Usage
 
 ```
-alias kops="docker run --rm -it -v $HOME/.kube/config:/root/.kube/config pottava/kubectl"
+alias kubectl="docker run --rm -it -v $HOME/.kube/:/root/.kube/ pottava/kubectl"
 kubectl version
 kubectl get pods
 ```
@@ -53,8 +53,6 @@ export AWS_SECRET_ACCESS_KEY=yyy
 
 docker run --rm -it \
     -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e AWS_DEFAULT_REGION -e KOPS_STATE_STORE \
-    -v `pwd`/id_rsa.pub:/tmp/id_rsa.pub -v `pwd`/out:/out \
+    -v `pwd`/id_rsa.pub:/tmp/id_rsa.pub -v `pwd`/out/:/out/ -v $HOME/.kube/:/root/.kube/ \
     pottava/kops create cluster --target=terraform --ssh-public-key=/tmp/id_rsa.pub $CLUSTER_NAME
-
-kops edit cluster $CLUSTER_NAME
 ```
