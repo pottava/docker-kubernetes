@@ -3,13 +3,12 @@ kubernetes-related tools
 
 ## kubectl
 
-### Images
+Overview  
+http://kubernetes.io/docs/user-guide/kubectl-overview/
+
+### Docker Images
 
 https://hub.docker.com/r/pottava/kubectl/
-
-### Available Tags
-
-https://hub.docker.com/r/pottava/kubectl/tags/
 
 ### Supported tags and respective `Dockerfile` links
 
@@ -26,13 +25,12 @@ kubectl get pods
 
 ## kops
 
-### Images
+Overview  
+https://github.com/kubernetes/kops
+
+### Docker Images
 
 https://hub.docker.com/r/pottava/kops/
-
-### Available Tags
-
-https://hub.docker.com/r/pottava/kops/tags/
 
 ### Supported tags and respective `Dockerfile` links
 
