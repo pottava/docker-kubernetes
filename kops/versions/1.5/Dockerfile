@@ -1,4 +1,4 @@
-# kops v1.4
+# kops v1.5
 # docker run --rm pottava/kops version
 # docker run --rm -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e KOPS_STATE_STORE \
 #        -v `pwd`/id_rsa.pub:/tmp/id_rsa.pub -v `pwd`/out/:/out/ -v $HOME/.kube/:/root/.kube/ \
@@ -7,7 +7,7 @@
 
 FROM pottava/kubectl:1.5
 
-ENV KOPS_VERSION=1.4.4
+ENV KOPS_VERSION=1.5.3
 
 RUN apk --no-cache add --virtual build-dependencies curl \
   && curl -O --location --silent --show-error https://github.com/kubernetes/kops/releases/download/v$KOPS_VERSION/kops-linux-amd64 \
